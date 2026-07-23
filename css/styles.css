@@ -1,0 +1,490 @@
+/* ==========================================================================
+   Uni Hill PTA — site stylesheet
+   Theme: "Midnight" (deep navy) based on the Uni Hill Elementary brand deck.
+
+   Everything color-related lives in the :root design tokens below, so the
+   whole site can be re-themed by editing this one block.
+   ========================================================================== */
+
+/* ---- Fonts (self-hosted, see /fonts) ------------------------------------ */
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 200; font-display: swap; src: url(../fonts/Poppins-200.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 300; font-display: swap; src: url(../fonts/Poppins-300.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/Poppins-400.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 500; font-display: swap; src: url(../fonts/Poppins-500.woff2) format('woff2'); }
+@font-face { font-family: 'Poppins'; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/Poppins-600.woff2) format('woff2'); }
+
+/* ---- Design tokens ------------------------------------------------------- */
+:root {
+  /* backgrounds, darkest to lightest */
+  --ink:        #16263e;   /* page background */
+  --ink-raised: #1d3050;   /* alternating sections, cards */
+  --ink-accent: #26395c;   /* list rows, highlights */
+
+  /* text */
+  --cream: #f4f2e3;        /* primary text */
+  --soft:  #c3cddd;        /* secondary text */
+  --white: #ffffff;        /* emphasized text */
+
+  /* brand accents (from the Uni Hill brand deck) */
+  --powder: #a8c6e8;       /* headlines, primary buttons */
+  --coral:  #f4694c;       /* section labels, donate buttons */
+  --yellow: #fedc00;
+  --pink:   #fe87e5;
+  --green:  #4cd964;
+  --orange: #fe9c00;
+  --purple: #ab63fe;
+
+  /* layout */
+  --page-width: 1180px;
+  --radius: 16px;
+
+  /* the alebrije logo, tintable anywhere via `background-color` + this mask */
+  --logo-mask: url(../img/logo-white.png);
+}
+
+/* ---- Reset & base -------------------------------------------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.7;
+  background: var(--ink);
+  color: var(--cream);
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.wrap { max-width: var(--page-width); margin: 0 auto; padding: 0 32px; }
+
+/* Tinted alebrije mark. Give any element this class plus a background-color. */
+.logo-mark {
+  display: inline-block;
+  aspect-ratio: 840 / 868;   /* intrinsic ratio of the logo artwork */
+  background-color: var(--cream);
+  -webkit-mask: var(--logo-mask) center / contain no-repeat;
+  mask: var(--logo-mask) center / contain no-repeat;
+}
+
+/* ---- Buttons ------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 13px 30px;
+  border: 0;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 500;
+  font-size: .95rem;
+  letter-spacing: .03em;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary { background: var(--powder); color: var(--ink); }
+.btn-donate  { background: var(--coral);  color: var(--white); }
+.btn-ghost   { border: 1px solid rgba(244, 242, 227, .5); color: var(--cream); }
+.btn:hover   { filter: brightness(1.08); }
+
+/* ---- Header & navigation ------------------------------------------------- */
+.site-header {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(244, 242, 227, .14);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+
+.brand { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+.brand .logo-mark { width: 62px; }
+.brand-name  { display: block; font-weight: 500; font-size: 1.15rem; color: var(--white); line-height: 1.3; }
+.brand-school { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--powder); }
+
+.site-nav { display: flex; gap: 34px; align-items: center; font-weight: 400; font-size: .92rem; letter-spacing: .04em; }
+.site-nav a { text-decoration: none; color: var(--soft); }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--white); }
+.site-nav .btn { color: var(--white); }
+
+/* Mobile navigation toggle (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid rgba(244, 242, 227, .4);
+  border-radius: 8px;
+  color: var(--cream);
+  font-size: 1.4rem;
+  line-height: 1;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* ---- Papel picado divider (SVG element in the HTML) ----------------------- */
+.picado { display: block; width: 100%; height: 34px; }
+
+/* ---- Sections ------------------------------------------------------------ */
+.section { padding: 92px 0; }
+.section-raised { background: var(--ink-raised); }
+
+.section-label {
+  display: inline-block;
+  color: var(--coral);
+  font-weight: 500;
+  font-size: .8rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(244, 242, 227, .4);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+h1, h2 { font-weight: 200; color: var(--powder); letter-spacing: -.01em; }
+h1 { font-size: 3.9rem; line-height: 1.12; margin-bottom: 26px; }
+h2 { font-size: 2.9rem; line-height: 1.15; margin-bottom: 18px; }
+h1 strong, h2 strong { font-weight: 400; color: var(--white); }
+
+.lead { color: var(--soft); max-width: 40em; font-size: 1.04rem; }
+
+/* ---- Hero ---------------------------------------------------------------- */
+.hero { padding: 88px 0 84px; }
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 70px;
+  align-items: center;
+}
+.kicker {
+  color: var(--coral);
+  font-weight: 500;
+  font-size: .8rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.hero p { max-width: 32em; color: var(--soft); margin-bottom: 36px; font-size: 1.06rem; }
+.cta-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+.hero-logo { display: flex; justify-content: center; }
+.hero-logo .logo-mark { width: min(420px, 100%); }
+
+/* Smaller hero used on inner pages */
+.page-hero { padding: 72px 0 56px; }
+.page-hero p { max-width: 38em; color: var(--soft); font-size: 1.06rem; }
+
+/* ---- Arched photo band --------------------------------------------------- */
+.photo-arcade { padding: 70px 0 0; }
+.photo-arcade .row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: end;
+}
+.photo-arcade img {
+  width: 100%;
+  aspect-ratio: .78;
+  object-fit: cover;
+  border-radius: 999px 999px 14px 14px;  /* the arch */
+}
+.photo-arcade figcaption {
+  text-align: center;
+  color: var(--soft);
+  font-size: .85rem;
+  letter-spacing: .04em;
+  margin-top: 26px;
+}
+
+/* ---- Volunteer section --------------------------------------------------- */
+.volunteer .wrap {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.stats { display: flex; gap: 54px; margin-top: 42px; flex-wrap: wrap; }
+.stat-number { font-weight: 200; font-size: 3rem; color: var(--white); line-height: 1.1; }
+.stat-number em { font-style: normal; color: var(--coral); }
+.stat-caption { font-size: .85rem; color: var(--soft); max-width: 12em; }
+
+.opportunity-list { display: grid; gap: 2px; margin-top: 10px; }
+.opportunity {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  padding: 24px 26px;
+  background: var(--ink-accent);
+  text-decoration: none;
+}
+.opportunity:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.opportunity:last-child  { border-radius: 0 0 var(--radius) var(--radius); }
+.opportunity:hover { background: #2d4368; }
+.opportunity .logo-mark { width: 56px; flex: none; }
+.opportunity h3 { font-weight: 500; color: var(--white); font-size: 1.08rem; }
+.opportunity p { font-size: .9rem; color: var(--soft); }
+.opportunity .arrow { margin-left: auto; color: var(--powder); font-size: 1.4rem; }
+
+/* ---- Donate section ------------------------------------------------------ */
+.donate .wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 76px;
+  align-items: center;
+}
+.donate-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: end;
+}
+.donate-photos img {
+  width: 100%;
+  aspect-ratio: .8;
+  object-fit: cover;
+  border-radius: 999px 999px 14px 14px;  /* arch */
+}
+
+.pill {
+  display: inline-block;
+  background: var(--yellow);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: .85rem;
+  padding: 10px 20px;
+  border-radius: 999px;
+  margin-bottom: 26px;
+}
+
+.funding-rows { display: grid; gap: 18px; margin: 6px 0 30px; }
+.funding-row {
+  display: grid;
+  grid-template-columns: 11em 1fr 3.5em;
+  gap: 18px;
+  align-items: center;
+  font-size: .92rem;
+}
+.funding-row .track {
+  height: 8px;
+  background: rgba(244, 242, 227, .12);
+  border-radius: 99px;
+  overflow: hidden;
+}
+.funding-row .fill { display: block; height: 100%; border-radius: 99px; }
+.funding-row .amount { color: var(--soft); text-align: right; font-style: normal; }
+/* set each bar's width inline in the HTML: <span class="fill" style="width:45%"> */
+.fill-classrooms { background: var(--powder); }
+.fill-trips      { background: var(--coral); }
+.fill-events     { background: var(--yellow); }
+
+/* ---- Teaser cards (home page WhatsApp / Meetings) ------------------------- */
+.teaser-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.teaser {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(244, 242, 227, .16);
+  border-radius: 20px;
+  padding: 44px;
+  background: var(--ink-raised);
+}
+.teaser h2 { font-size: 1.8rem; margin-bottom: 10px; }
+.teaser p { color: var(--soft); margin-bottom: 26px; font-size: .98rem; }
+.teaser .watermark {
+  position: absolute;
+  right: -34px;
+  bottom: -44px;
+  width: 190px;
+  opacity: .16;
+}
+
+/* ---- WhatsApp page ------------------------------------------------------- */
+.whatsapp-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.group-list { display: grid; gap: 14px; }
+.group-link {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+  background: var(--ink-raised);
+  border: 1px solid rgba(244, 242, 227, .14);
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+.group-link:hover { background: var(--ink-accent); }
+.group-link .logo-mark { width: 40px; flex: none; }
+.group-link h3 { font-weight: 500; font-size: 1rem; color: var(--white); }
+.group-link p { font-size: .85rem; color: var(--soft); }
+.group-link .arrow { margin-left: auto; color: var(--powder); font-size: 1.3rem; }
+
+/* WhatsApp-style chat preview (pure HTML, easy to edit) */
+.chat-preview {
+  background: var(--ink-raised);
+  border: 1px solid rgba(244, 242, 227, .16);
+  border-radius: 20px;
+  padding: 26px;
+}
+.chat-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--white);
+  font-size: .95rem;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(244, 242, 227, .14);
+}
+.chat-title .logo-mark { width: 34px; background-color: var(--green); }
+.chat-title small { display: block; font-weight: 300; color: var(--soft); font-size: .78rem; }
+.bubble {
+  max-width: 85%;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: .88rem;
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+.bubble strong { display: block; font-weight: 600; font-size: .78rem; }
+.bubble time { display: block; text-align: right; font-size: .68rem; opacity: .6; }
+.bubble-them { background: var(--ink-accent); border-top-left-radius: 4px; }
+.bubble-them strong { color: var(--pink); }
+.bubble-them:nth-of-type(odd) strong { color: var(--yellow); }
+.bubble-me {
+  background: #235c3f;
+  color: #eaf6ec;
+  margin-left: auto;
+  border-top-right-radius: 4px;
+}
+
+/* ---- Meetings page ------------------------------------------------------- */
+.meeting-list { display: grid; gap: 22px; }
+.meeting {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 28px;
+  background: var(--ink-raised);
+  border: 1px solid rgba(244, 242, 227, .14);
+  border-radius: 20px;
+  padding: 30px 34px;
+}
+.meeting-date {
+  text-align: center;
+  align-self: start;
+  background: var(--ink-accent);
+  border-radius: 14px;
+  padding: 14px 10px;
+}
+.meeting-date .month { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); font-weight: 500; }
+.meeting-date .day { font-size: 2.1rem; font-weight: 400; color: var(--white); line-height: 1.15; }
+.meeting h3 { font-weight: 500; color: var(--white); font-size: 1.15rem; margin-bottom: 4px; }
+.meeting .when { font-size: .88rem; color: var(--powder); margin-bottom: 12px; }
+.meeting h4 { font-weight: 500; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin: 14px 0 6px; }
+.meeting ul { list-style: none; }
+.meeting li { padding-left: 20px; position: relative; font-size: .95rem; color: var(--soft); }
+.meeting li::before { content: "•"; position: absolute; left: 4px; color: var(--yellow); }
+
+.calendar-embed {
+  border: 1px solid rgba(244, 242, 227, .16);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--ink-raised);
+}
+.calendar-embed iframe { display: block; width: 100%; height: 500px; border: 0; }
+
+.subscribe-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 26px; }
+
+.form-embed {
+  border: 1px solid rgba(244, 242, 227, .16);
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--ink-raised);
+}
+.form-embed iframe { display: block; width: 100%; height: 640px; border: 0; }
+
+/* ---- Mission page -------------------------------------------------------- */
+.mission-statement {
+  font-weight: 200;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  color: var(--cream);
+  max-width: 26em;
+}
+.mission-statement strong { font-weight: 400; color: var(--powder); }
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-top: 50px;
+}
+.pillar { background: var(--ink-raised); border: 1px solid rgba(244,242,227,.14); border-radius: 20px; padding: 30px 26px; }
+.pillar .logo-mark { width: 52px; margin-bottom: 18px; }
+.pillar h3 { font-weight: 500; color: var(--white); font-size: 1.1rem; margin-bottom: 8px; }
+.pillar p { font-size: .9rem; color: var(--soft); }
+
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+.photo-grid img.arch { border-radius: 999px 999px 14px 14px; }
+
+/* ---- Footer -------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid rgba(244, 242, 227, .14);
+  padding: 56px 0;
+  margin-top: 40px;
+}
+.site-footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+.footer-brand { display: flex; align-items: center; gap: 26px; }
+.footer-brand .logo-mark { width: 96px; }
+.footer-brand b { font-weight: 500; color: var(--white); }
+.footer-brand small { display: block; color: var(--soft); opacity: .8; font-size: .85rem; margin-top: 8px; }
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 960px) {
+  h1 { font-size: 2.8rem; }
+  h2 { font-size: 2.2rem; }
+
+  .hero .wrap,
+  .volunteer .wrap,
+  .donate .wrap,
+  .whatsapp-layout { grid-template-columns: 1fr; gap: 44px; }
+
+  .hero-logo .logo-mark { width: min(300px, 70%); }
+  .photo-arcade .row { grid-template-columns: repeat(2, 1fr); }
+  .teaser-grid { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* collapse nav behind the toggle button */
+  .nav-toggle { display: block; }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    flex-direction: column;
+    gap: 22px;
+    background: var(--ink-raised);
+    border-bottom: 1px solid rgba(244, 242, 227, .14);
+    padding: 30px 32px;
+  }
+  .site-nav.open { display: flex; }
+  .site-header { position: relative; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .section { padding: 64px 0; }
+  .wrap { padding: 0 22px; }
+  .funding-row { grid-template-columns: 1fr 3.5em; }
+  .funding-row .track { grid-column: 1 / -1; order: 2; }
+  .meeting { grid-template-columns: 1fr; }
+  .meeting-date { justify-self: start; padding: 10px 18px; }
+  .stats { gap: 34px; }
+}

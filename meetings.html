@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTA Meetings — Uni Hill PTA</title>
+<meta name="description" content="Upcoming Uni Hill PTA meetings, agendas, and the shared calendar. First Tuesday of the month — childcare provided, interpretación disponible.">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <span>
+        <span class="brand-name">Uni Hill PTA</span>
+        <span class="brand-school">University Hill Elementary</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Menu">☰</button>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#volunteer">Volunteer</a>
+      <a href="whatsapp.html">WhatsApp</a>
+      <a href="meetings.html" aria-current="page">Meetings</a>
+      <a href="mission.html">Mission</a>
+      <!-- TODO: replace with the PTA's real donation page URL -->
+      <a class="btn btn-donate" href="https://example.com/donate">Donate</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="kicker">PTA Meetings · Reuniones</p>
+      <h1>Pull up a <strong>tiny chair.</strong></h1>
+      <p>First Tuesday of the month in the school library. Childcare provided, interpretación disponible, snacks guaranteed. Come decide where the money goes, plan the next fiesta, or just listen in — every voice counts, in either language.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:40px">
+    <div class="wrap">
+      <p class="section-label">Upcoming · Próximas reuniones</p>
+      <!-- Meetings are rendered from js/meetings-data.js — edit that file to update -->
+      <div class="meeting-list"></div>
+    </div>
+  </section>
+
+  <section class="section section-raised">
+    <div class="wrap">
+      <p class="section-label">Calendar · Calendario</p>
+      <h2>Never miss a <strong>meeting.</strong></h2>
+      <p class="lead" style="margin-bottom:34px">Everything PTA — meetings, events, spirit days — lives on one shared calendar. Subscribe once and it shows up on your phone automatically.</p>
+      <div class="calendar-embed">
+        <!-- TODO: replace REPLACE_ME with the PTA's Google Calendar ID (Settings → Integrate calendar) -->
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=REPLACE_ME%40group.calendar.google.com&ctz=America%2FDenver&bgcolor=%231d3050"
+          title="Uni Hill PTA calendar"
+          loading="lazy"></iframe>
+      </div>
+      <div class="subscribe-row">
+        <!-- TODO: replace REPLACE_ME with the calendar ID in both links -->
+        <a class="btn btn-primary" href="https://calendar.google.com/calendar/u/0/r?cid=REPLACE_ME%40group.calendar.google.com">Add to Google Calendar</a>
+        <a class="btn btn-ghost" href="https://calendar.google.com/calendar/ical/REPLACE_ME%40group.calendar.google.com/public/basic.ics">Subscribe via iCal / Apple</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="section-label">Your ideas · Tus ideas</p>
+      <h2>What should we talk about <strong>next?</strong></h2>
+      <p class="lead" style="margin-bottom:34px">Meetings work best when the agenda comes from families. Suggest a topic — big, small, in English o en español — and we'll get it on the list.</p>
+      <div class="form-embed">
+        <!-- TODO: replace with the PTA's real Google Form embed URL (Form → Send → < > icon) -->
+        <iframe
+          src="https://docs.google.com/forms/d/e/REPLACE_ME/viewform?embedded=true"
+          title="Suggest a meeting topic"
+          loading="lazy">Loading…</iframe>
+      </div>
+      <p class="lead" style="margin-top:22px; font-size:.9rem">Prefer email? Send your idea to <a href="mailto:pta@unihill.org">pta@unihill.org</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-brand">
+      <span class="logo-mark" aria-hidden="true"></span>
+      <div>
+        <b>Uni Hill Elementary PTA</b>
+        <small>956 16th Street, Boulder CO · est. 1906 · pta@unihill.org · © <span data-year>2026</span></small>
+      </div>
+    </div>
+    <!-- TODO: replace with the PTA's real donation page URL -->
+    <a class="btn btn-donate" href="https://example.com/donate">Donate</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/meetings-data.js"></script>
+</body>
+</html>
