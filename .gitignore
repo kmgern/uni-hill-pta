@@ -1,0 +1,4 @@
+# screenshot output from scripts/screenshot.sh
+out/
+*.png
+!img/*.png

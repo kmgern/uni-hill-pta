@@ -14,6 +14,17 @@ Plain HTML, CSS and JavaScript — no framework, no build step. Open
 | `meetings.html` | Upcoming meetings, shared calendar, topic suggestions |
 | `mission.html` | Mission, pillars, photo gallery |
 
+## For AI agents / developers
+
+`CLAUDE.md` documents the design system, conventions, and gotchas.
+Helper scripts (need only a Chromium binary and Python 3):
+
+- `scripts/screenshot.sh [page] [outdir]` — render a page to desktop +
+  mobile PNGs for visual verification.
+- `scripts/check.sh` — preflight: broken local links, header/footer drift
+  between pages, remaining TODO placeholders. Run before committing.
+- `templates/page.html` — boilerplate for new pages.
+
 ## Editing guide
 
 - **Colors / theme** — everything lives in the `:root` block at the top of
