@@ -43,18 +43,16 @@ Helper scripts (need only a Chromium binary and Python 3):
 
 Search the HTML for `TODO` comments. Placeholders that need real values:
 
-1. **Donation URL** — `https://example.com/donate` appears in the nav,
-   donate section, mission page and footer of every page.
-2. **WhatsApp invite links** — `https://chat.whatsapp.com/REPLACE-*` in
+1. **WhatsApp invite links** — `https://chat.whatsapp.com/REPLACE-*` in
    `whatsapp.html` (get from each group: Group info → Invite via link).
-3. **Google Calendar ID** — `REPLACE_ME` in `meetings.html` (three spots:
+2. **Google Calendar ID** — `REPLACE_ME` in `meetings.html` (three spots:
    embed iframe, Google subscribe link, iCal link). Found under calendar
    Settings → "Integrate calendar".
-4. **Topic-suggestion form** — Google Form embed URL in `meetings.html`.
-5. **Contact email** — `pta@unihill.org` is a guess; confirm and replace
+3. **Topic-suggestion form** — Google Form embed URL in `meetings.html`.
+4. **Contact email** — `pta@unihill.org` is a guess; confirm and replace
    everywhere (footer, volunteer links, meetings page, album request).
-6. **Photo album request link** — `mission.html`.
-7. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
+5. **Photo album request link** — `mission.html`.
+6. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
    events) are illustrative; replace with real figures.
-8. **Funding split** — the 45/35/20 breakdown in the donate section is
+7. **Funding split** — the 45/35/20 breakdown in the donate section is
    illustrative; replace with the real budget split.
