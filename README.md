@@ -48,7 +48,7 @@ Search the HTML for `TODO` comments. Placeholders that need real values:
    Settings → "Integrate calendar".
 2. **Topic-suggestion form** — Google Form embed URL in `meetings.html`.
 3. **Contact email** — `pta@unihill.org` is a guess; confirm and replace
-   everywhere (footer, volunteer links, meetings page, album request).
+   everywhere (footer, meetings page, album request).
 4. **Photo album request link** — `mission.html`.
 5. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
    events) are illustrative; replace with real figures.
