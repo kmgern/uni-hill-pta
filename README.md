@@ -43,8 +43,11 @@ Helper scripts (need only a Chromium binary and Python 3):
 
 Search the HTML for `TODO` comments. Placeholders that need real values:
 
-1. **WhatsApp invite links** — `https://chat.whatsapp.com/REPLACE-*` in
-   `whatsapp.html` (get from each group: Group info → Invite via link).
+1. **WhatsApp invite links** — the All-School and Volunteers links in
+   `whatsapp.html` are still `https://chat.whatsapp.com/REPLACE-*`
+   placeholders (get from each group: Group info → Invite via link).
+   Pre-K–5th grade links are real, synced from
+   [unihillpta.com/enlaces-utiles-useful-links](https://www.unihillpta.com/enlaces-utiles-useful-links).
 2. **Google Calendar ID** — `REPLACE_ME` in `meetings.html` (three spots:
    embed iframe, Google subscribe link, iCal link). Found under calendar
    Settings → "Integrate calendar".
