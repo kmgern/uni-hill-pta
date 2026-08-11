@@ -43,14 +43,11 @@ Helper scripts (need only a Chromium binary and Python 3):
 
 Search the HTML for `TODO` comments. Placeholders that need real values:
 
-1. **Google Calendar ID** — `REPLACE_ME` in `meetings.html` (three spots:
-   embed iframe, Google subscribe link, iCal link). Found under calendar
-   Settings → "Integrate calendar".
-2. **Topic-suggestion form** — Google Form embed URL in `meetings.html`.
-3. **Contact email** — `pta@unihill.org` is a guess; confirm and replace
+1. **Topic-suggestion form** — Google Form embed URL in `meetings.html`.
+2. **Contact email** — `pta@unihill.org` is a guess; confirm and replace
    everywhere (footer, meetings page, album request).
-4. **Photo album request link** — `mission.html`.
-5. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
+3. **Photo album request link** — `mission.html`.
+4. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
    events) are illustrative; replace with real figures.
-6. **Funding split** — the 45/35/20 breakdown in the donate section is
+5. **Funding split** — the 45/35/20 breakdown in the donate section is
    illustrative; replace with the real budget split.
