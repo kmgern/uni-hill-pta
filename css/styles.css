@@ -393,13 +393,36 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
 
 .subscribe-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 26px; }
 
-.form-embed {
+/* Suggest-a-topic: text on the left, example topics card on the right */
+.suggest .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 70px;
+  align-items: center;
+}
+.idea-card {
+  background: var(--ink-raised);
   border: 1px solid rgba(244, 242, 227, .16);
   border-radius: 20px;
-  overflow: hidden;
-  background: var(--ink-raised);
+  padding: 34px 36px;
 }
-.form-embed iframe { display: block; width: 100%; height: 640px; border: 0; }
+.idea-card h3 {
+  font-weight: 500;
+  font-size: .85rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 22px;
+}
+.idea-card ul { list-style: none; display: grid; gap: 20px; }
+.idea-card li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: .95rem;
+  color: var(--soft);
+}
+.idea-card .logo-mark { width: 38px; flex: none; }
 
 /* ---- Mission page -------------------------------------------------------- */
 .mission-statement {
@@ -451,6 +474,7 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
   .hero .wrap,
   .volunteer .wrap,
   .donate .wrap,
+  .suggest .wrap,
   .whatsapp-layout { grid-template-columns: 1fr; gap: 44px; }
 
   .hero-logo .logo-mark { width: min(300px, 70%); }

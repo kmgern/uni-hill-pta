@@ -43,11 +43,15 @@ Helper scripts (need only a Chromium binary and Python 3):
 
 Search the HTML for `TODO` comments. Placeholders that need real values:
 
-1. **Topic-suggestion form** — Google Form embed URL in `meetings.html`.
-2. **Contact email** — `pta@unihill.org` is a guess; confirm and replace
-   everywhere (footer, meetings page, album request).
-3. **Photo album request link** — `mission.html`.
-4. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
+1. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
    events) are illustrative; replace with real figures.
-5. **Funding split** — the 45/35/20 breakdown in the donate section is
+2. **Funding split** — the 45/35/20 breakdown in the donate section is
    illustrative; replace with the real budget split.
+3. **Example meeting topics** — the "things families have asked about"
+   list in `meetings.html` is plausible filler; swap in real questions.
+4. **Mailing address** — confirm `956 16th Street, Boulder CO` in the
+   footer of every page.
+
+Contact goes to `unihillpta@gmail.com` throughout; each `mailto:` carries
+a subject line matched to its context (general question, meeting topic
+suggestion, photo album access).
