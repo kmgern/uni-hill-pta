@@ -11,7 +11,7 @@ Plain HTML, CSS and JavaScript — no framework, no build step. Open
 | --- | --- |
 | `index.html` | Home — volunteer opportunities and donations |
 | `whatsapp.html` | WhatsApp group directory + example chat |
-| `meetings.html` | Upcoming meetings, shared calendar, topic suggestions |
+| `meetings.html` | When meetings happen, shared calendar, topic suggestions |
 | `mission.html` | Mission, pillars, photo gallery |
 
 ## For AI agents / developers
@@ -29,8 +29,8 @@ Helper scripts (need only a Chromium binary and Python 3):
 
 - **Colors / theme** — everything lives in the `:root` block at the top of
   `css/styles.css`. Change `--ink` (and friends) to re-theme the site.
-- **Meetings** — edit `js/meetings-data.js`. Add new meetings to the list;
-  past meetings hide themselves automatically.
+- **Meetings** — dates live on the shared Google Calendar embedded in
+  `meetings.html`; add them there, not in the HTML.
 - **The logo** — `img/logo-white.png` is a white version of the alebrije
   mark used as a CSS mask, so it can be tinted any color:
   `<span class="logo-mark" style="background-color: var(--pink)"></span>`

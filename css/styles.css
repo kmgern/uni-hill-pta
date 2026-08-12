@@ -357,32 +357,6 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
 }
 
 /* ---- Meetings page ------------------------------------------------------- */
-.meeting-list { display: grid; gap: 22px; }
-.meeting {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 28px;
-  background: var(--ink-raised);
-  border: 1px solid rgba(244, 242, 227, .14);
-  border-radius: 20px;
-  padding: 30px 34px;
-}
-.meeting-date {
-  text-align: center;
-  align-self: start;
-  background: var(--ink-accent);
-  border-radius: 14px;
-  padding: 14px 10px;
-}
-.meeting-date .month { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--coral); font-weight: 500; }
-.meeting-date .day { font-size: 2.1rem; font-weight: 400; color: var(--white); line-height: 1.15; }
-.meeting h3 { font-weight: 500; color: var(--white); font-size: 1.15rem; margin-bottom: 4px; }
-.meeting .when { font-size: .88rem; color: var(--powder); margin-bottom: 12px; }
-.meeting h4 { font-weight: 500; font-size: .85rem; letter-spacing: .1em; text-transform: uppercase; color: var(--coral); margin: 14px 0 6px; }
-.meeting ul { list-style: none; }
-.meeting li { padding-left: 20px; position: relative; font-size: .95rem; color: var(--soft); }
-.meeting li::before { content: "•"; position: absolute; left: 4px; color: var(--yellow); }
-
 .calendar-embed {
   border: 1px solid rgba(244, 242, 227, .16);
   border-radius: 20px;

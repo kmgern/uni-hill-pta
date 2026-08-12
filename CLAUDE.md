@@ -12,11 +12,10 @@ via `file://` or any static host.
 | --- | --- |
 | `index.html` | Home: hero, photo band, volunteering, donations, teasers |
 | `whatsapp.html` | WhatsApp group directory + fake-but-editable chat preview |
-| `meetings.html` | Meetings list (JS-rendered), calendar embed, topic form |
+| `meetings.html` | When/where meetings happen, calendar embed, topic ideas |
 | `mission.html` | Mission statement, pillars, photo gallery |
 | `css/styles.css` | The only stylesheet. Design tokens at top |
 | `js/main.js` | Nav toggle + footer year. Keep tiny |
-| `js/meetings-data.js` | `MEETINGS` array + renderer. The PTA edits the array |
 | `templates/page.html` | Boilerplate for new pages (canonical header/footer) |
 | `scripts/screenshot.sh` | Render a page to PNG (desktop + mobile) |
 | `scripts/check.sh` | Preflight: broken local refs, chrome drift, TODOs |
