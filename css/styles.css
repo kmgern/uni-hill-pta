@@ -248,6 +248,14 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
   object-fit: cover;
   border-radius: 999px 999px 14px 14px;  /* arch */
 }
+/* One landscape photo spanning both columns, to open the group up. A 999px
+   radius on a wide box clamps into a full dome that swallows the corners of
+   the photo, so this one gets a shallower arch with shoulders. */
+.donate-photos .wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 1.5;
+  border-radius: 180px 180px 14px 14px;
+}
 
 .pill {
   display: inline-block;
@@ -538,6 +546,10 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
   .donate .wrap,
   .suggest .wrap,
   .whatsapp-layout { grid-template-columns: 1fr; gap: 44px; }
+
+  /* Stacked, the photo group is tall enough to push the pitch below the
+     fold, so let the message lead and the photos follow. */
+  .donate-photos { order: 2; }
 
   .ledger-grid { grid-template-columns: 1fr; gap: 36px; }
   .donate .wrap.donate-ledger { margin-top: 56px; }
