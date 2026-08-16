@@ -45,12 +45,15 @@ Search the HTML for `TODO` comments. Placeholders that need real values:
 
 1. **Volunteer stats** — the numbers on the home page (1,200+ hours, 14
    events) are illustrative; replace with real figures.
-2. **Funding split** — the 45/35/20 breakdown in the donate section is
-   illustrative; replace with the real budget split.
-3. **Example meeting topics** — the "things families have asked about"
+2. **Example meeting topics** — the "things families have asked about"
    list in `meetings.html` is plausible filler; swap in real questions.
-4. **Mailing address** — confirm `956 16th Street, Boulder CO` in the
+3. **Mailing address** — confirm `956 16th Street, Boulder CO` in the
    footer of every page.
+
+The funding breakdown in the donate section is real: the five bars are
+actual spend, and the percentages are each category's share of the five
+totalled ($181,733). Update the dollar amounts, the `width:` on each bar
+and the `%` at the end of the row together when new figures come in.
 
 Contact goes to `unihillpta@gmail.com` throughout; each `mailto:` carries
 a subject line matched to its context (general question, meeting topic
