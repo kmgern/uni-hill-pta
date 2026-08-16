@@ -260,6 +260,38 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
   margin-bottom: 26px;
 }
 
+/* Live fundraising thermometer (Zeffy embed). Same wrapper pattern as the
+   calendar embed on the meetings page — see .calendar-embed. The iframe is
+   cross-origin, so nothing inside it can be styled from here; the panel
+   around it is what makes it look like part of the page. */
+.progress-embed {
+  background: var(--ink-accent);
+  border-radius: var(--radius);
+  padding: 24px 26px 18px;
+  margin-top: 34px;
+}
+.progress-label {
+  color: var(--coral);
+  font-weight: 500;
+  font-size: .8rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+/* Zeffy renders the thermometer with dark text on a transparent background,
+   which is invisible on our navy. We can't restyle inside a cross-origin
+   frame, so flip its lightness and put the hues back: dark text becomes
+   light, and the violet progress bar stays violet. */
+.progress-embed iframe {
+  display: block;
+  width: 100%;
+  /* Just taller than the widget's content, with slack so it can't clip if
+     Zeffy adds a line. Raise this, don't lower it. */
+  height: 60px;
+  border: 0;
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /* The request: the one number we want families to remember. */
 .request {
   background: var(--ink-accent);
