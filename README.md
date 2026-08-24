@@ -49,6 +49,12 @@ Search the HTML for `TODO` comments. Placeholders that need real values:
    list in `meetings.html` is plausible filler; swap in real questions.
 3. **Mailing address** — confirm `956 16th Street, Boulder CO` in the
    footer of every page.
+4. **Second 5th-grade WhatsApp group** — all eight grade links in
+   `whatsapp.html` were verified in Aug 2026 against the group name each
+   invite page shows. A second 5th-grade group, "UniHill 5to/th
+   Families/ias" (`chat.whatsapp.com/GZDWYDjGEkv9sNQ2cjlX7y`), is not
+   linked anywhere — confirm whether it replaces or supplements the 5th
+   grade link.
 
 The funding breakdown in the donate section is real: the five bars are
 actual spend, and the percentages are each category's share of the five
