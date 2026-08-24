@@ -25,6 +25,9 @@
   --soft:  #c3cddd;        /* secondary text */
   --white: #ffffff;        /* emphasized text */
 
+  /* hairline edge on dark-filled surfaces (quiet hero CTA) */
+  --hairline: rgba(244, 242, 227, .28);
+
   /* brand accents (from the Uni Hill brand deck) */
   --powder: #a8c6e8;       /* headlines, primary buttons */
   --coral:  #f4694c;       /* section labels, donate buttons */
@@ -84,6 +87,12 @@ a { color: inherit; }
 .btn-primary { background: var(--powder); color: var(--ink); }
 .btn-donate  { background: var(--coral);  color: var(--white); }
 .btn-ghost   { border: 1px solid rgba(244, 242, 227, .5); color: var(--cream); }
+/* Third peer in the hero trio: filled like the other two (so it carries the
+   same visual mass) but in the quiet navy, so colour alone ranks the three.
+   The edge is an inset shadow, not a border, so its box stays pixel-identical
+   to .btn-donate / .btn-primary. */
+.btn-invite  { background: var(--ink-accent); color: var(--cream);
+               box-shadow: inset 0 0 0 1px var(--hairline); }
 .btn:hover   { filter: brightness(1.08); }
 
 /* ---- Header & navigation ------------------------------------------------- */
@@ -168,7 +177,27 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
   margin-bottom: 22px;
 }
 .hero p { max-width: 32em; color: var(--soft); margin-bottom: 36px; font-size: 1.06rem; }
-.cta-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+/* Hero CTA trio ­— three peers on one line.
+   Every button shares the same shape, height, padding and type; only the fill
+   colour ranks them. The two knobs below (horizontal padding + type size) are
+   what keeps all three on a single row as the text column narrows, so tune
+   those rather than letting the row wrap. */
+.cta-row {
+  --cta-px: 22px;          /* horizontal padding inside each pill */
+  --cta-fs: .9rem;         /* label size */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  align-items: stretch;
+}
+.cta-row .btn {
+  flex: 0 0 auto;
+  padding: 14px var(--cta-px);
+  font-size: var(--cta-fs);
+  letter-spacing: .02em;
+  white-space: nowrap;
+  text-align: center;
+}
 .hero-logo { display: flex; justify-content: center; }
 .hero-logo .logo-mark { width: min(420px, 100%); }
 
@@ -537,6 +566,15 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
 .footer-brand small { display: block; color: var(--soft); opacity: .8; font-size: .85rem; margin-top: 8px; }
 
 /* ---- Responsive ---------------------------------------------------------- */
+
+/* Between 960px and the 1180px page width the hero text column shrinks but the
+   CTA labels don't, so the trio is squeezed hardest here. Borrow a little room
+   from the column gap and trim the pills rather than let one drop to line two. */
+@media (max-width: 1180px) and (min-width: 961px) {
+  .hero .wrap { grid-template-columns: 1.2fr .8fr; gap: 48px; }
+  .cta-row { --cta-px: 16px; --cta-fs: .84rem; gap: 10px; }
+}
+
 @media (max-width: 960px) {
   h1 { font-size: 2.8rem; }
   h2 { font-size: 2.2rem; }
@@ -555,6 +593,9 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
   .donate .wrap.donate-ledger { margin-top: 56px; }
 
   .hero-logo .logo-mark { width: min(300px, 70%); }
+
+  /* Single-column hero: the row has the full page width again. */
+  .cta-row { --cta-px: 22px; --cta-fs: .88rem; flex-wrap: wrap; }
   .photo-arcade .row { grid-template-columns: repeat(2, 1fr); }
   .teaser-grid { grid-template-columns: 1fr; }
   .pillar-grid { grid-template-columns: repeat(2, 1fr); }
@@ -577,6 +618,14 @@ h1 strong, h2 strong { font-weight: 400; color: var(--white); }
   }
   .site-nav.open { display: flex; }
   .site-header { position: relative; }
+}
+
+/* Narrower than three-across can sit comfortably. Stack the trio full width
+   rather than let it break 2 + 1, which is what made the third CTA read as an
+   afterthought in the first place. (Its own breakpoint: this is the width the
+   three labels stop fitting, not one of the site's layout breakpoints.) */
+@media (max-width: 640px) {
+  .cta-row { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 420px; }
 }
 
 @media (max-width: 560px) {
