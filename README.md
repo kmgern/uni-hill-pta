@@ -49,7 +49,7 @@ Search the HTML for `TODO` comments. Placeholders that need real values:
    list in `meetings.html` is plausible filler; swap in real questions.
 3. **Mailing address** — confirm `956 16th Street, Boulder CO` in the
    footer of every page.
-4. **Second 5th-grade WhatsApp group** — all eight grade links in
+4. **Second 5th-grade WhatsApp group** — all seven grade links in
    `whatsapp.html` were verified in Aug 2026 against the group name each
    invite page shows. A second 5th-grade group, "UniHill 5to/th
    Families/ias" (`chat.whatsapp.com/GZDWYDjGEkv9sNQ2cjlX7y`), is not
