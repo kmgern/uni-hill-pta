@@ -23,7 +23,16 @@ Helper scripts (need only a Chromium binary and Python 3):
   mobile PNGs for visual verification.
 - `scripts/check.sh` — preflight: broken local links, header/footer drift
   between pages, remaining TODO placeholders. Run before committing.
+- `scripts/serve.sh [page] [port]` — serve the site at
+  `http://localhost:8000` and open a page; `scripts/serve.sh stop` to stop.
+- `scripts/deploy.sh "message"` — commit, push to `main`, and watch until
+  the change is live at www.unihillpta.com. Uses the `gh` CLI to report
+  build failures; without it, falls back to polling the live site.
 - `templates/page.html` — boilerplate for new pages.
+
+The site is hosted on GitHub Pages straight from the `main` branch, so
+pushing to `main` publishes it. Claude Code skills for both helpers live
+in `.claude/skills/` (`/preview` and `/deploy`).
 
 ## Editing guide
 

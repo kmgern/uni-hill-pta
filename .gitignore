@@ -2,3 +2,7 @@
 out/
 *.png
 !img/*.png
+
+# local Claude Code state (skills in .claude/skills/ are shared, this is not)
+.claude/settings.local.json
+.claude/worktrees/

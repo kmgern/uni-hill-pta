@@ -19,6 +19,8 @@ via `file://` or any static host.
 | `templates/page.html` | Boilerplate for new pages (canonical header/footer) |
 | `scripts/screenshot.sh` | Render a page to PNG (desktop + mobile) |
 | `scripts/check.sh` | Preflight: broken local refs, chrome drift, TODOs |
+| `scripts/serve.sh` | Local preview server + browser (`/preview` skill) |
+| `scripts/deploy.sh` | Commit, push to main, watch Pages go live (`/deploy`) |
 | `img/` | Photos (`event-*` = PTA events, `school-*` = building) + logo |
 | `fonts/` | Self-hosted Poppins woff2 (weights 200–600) |
 
@@ -106,9 +108,25 @@ Gotchas learned the hard way (both handled by the script):
   is actually a 500px layout cropped to 390 — so shoot mobile at 500px
   and trust the breakpoints (`960px` and `560px` in `styles.css`).
 
+To preview over HTTP the way GitHub Pages serves it (rather than
+`file://`), use `scripts/serve.sh [page] [port]` — it stops any previous
+preview server first, so nothing orphans. `scripts/serve.sh stop` when done.
+
 Before committing, run `scripts/check.sh`. It verifies every local
 `src`/`href` target exists, the shared chrome matches across pages, and
 lists remaining TODOs.
+
+## Deploying
+
+The site is GitHub Pages served from `main` at `www.unihillpta.com`, so a
+push to `main` is the deploy. There is no workflow file in the repo —
+GitHub generates the `pages-build-deployment` runs itself. Use
+`scripts/deploy.sh "message"`: it runs `check.sh`, commits, pushes, waits
+on the Pages build for that commit (via `gh`, so a build failure is
+reported with GitHub's own error message), then compares the changed
+files byte-for-byte against the live site before calling it live. Confirm
+the diff with the owner before running it — it publishes immediately to a
+public school site.
 
 ## Do not
 
